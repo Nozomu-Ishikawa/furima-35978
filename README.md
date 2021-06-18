@@ -3,7 +3,7 @@
 ## users テーブル
 
 | Column                     | Type   | Options                     |
-| ------------------------   | ------ | -----------                 |
+| ------------------------   | ------ | --------------------------- |
 | nickname                   | string | null:false                  |
 | encrypted_password         | string | null:false                  |
 | email                      | string | null:false, unique: true    |
@@ -11,7 +11,7 @@
 | first_name                 | string | null:false                  |
 | last_name_kana             | string | null:false                  |
 | first_name_kana            | string | null:false                  |
-| date                       | date   | null:false                  |
+| birthday                   | date   | null:false                  |
 
 ### Association
   ・has_many :items 
@@ -19,16 +19,16 @@
 
 ## items テーブル
 
-| Column                    | Type       | Options     |
-| ------------------------- | ---------- | ----------- |
-| name                      | string     | null:false    |
-| description               | text       | null:false    |
-| category_name_id          | integer    | null:false    |
-| status_id                 | integer    | null:false    |
-| shipping_charge_id        | integer    | null:false    |
-| shipping_area_id          | integer    | null:false    |
-| days_to_ship_id           | integer    | null:false   |
-| price                     | integer    | null:false   |
+| Column                    | Type       | Options             |
+| ------------------------- | ---------- | ------------------- |
+| name                      | string     | null:false          |
+| description               | text       | null:false          |
+| category_name_id          | integer    | null:false          |
+| status_id                 | integer    | null:false          |
+| shipping_charge_id        | integer    | null:false          |
+| shipping_area_id          | integer    | null:false          |
+| days_to_ship_id           | integer    | null:false          |
+| price                     | integer    | null:false          |
 | user                      | references | foreign_key:true    |
 
 ### Association
