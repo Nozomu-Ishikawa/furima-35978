@@ -16,6 +16,7 @@
 ### Association
   ・has_many :items 
   ・has_many :cards 
+  ・has_many :orders
 
 ## items テーブル
 
