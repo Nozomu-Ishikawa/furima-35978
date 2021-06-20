@@ -26,6 +26,6 @@ class User < ApplicationRecord
 
   has_many :items
   has_many :orders
-  has_many :card, dependent: :destroy
+  has_many :card #dependent: :destroy(後で実装)
 
 end
