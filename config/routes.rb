@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   #itemsコントローラについてのルーティング
-  resources :items, only: [:index, :new, :create]
+  resources :items, only: [:index, :new, :create, :show, :edit]
 
   #usersコントローラに対してのルーティング
 
