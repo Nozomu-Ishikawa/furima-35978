@@ -1,7 +1,8 @@
 class ItemsController < ApplicationController
   
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_command, only: [:show, :edit, :destroy]
+  before_action :set_command, only: [:show, :edit, :update]
+  before_action :customer_insert, only: [:edit, :update]
 
   def index
     @items = Item.order("created_at DESC")
@@ -26,6 +27,14 @@ class ItemsController < ApplicationController
   def edit
   end
 
+  def update
+    if @item.update(item_params)
+      redirect_to item_path(@item.id)
+    else
+      render :edit
+    end
+  end
+
   #privateメソッドで処理をまとめておく
   private
   def item_params
@@ -34,5 +43,9 @@ class ItemsController < ApplicationController
 
   def set_command
     @item = Item.find(params[:id])
+  end
+
+  def customer_insert
+    redirect_to root_path unless current_user.id == @item.user.id
   end
 end
