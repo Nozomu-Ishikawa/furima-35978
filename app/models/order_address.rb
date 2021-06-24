@@ -10,7 +10,7 @@ class OrderAddress
     validates :address
     validates :postal_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)"}
     validates :municipality
-    validates :phone_number, numericality: { only_integer: true }
+    validates :phone_number, format: { with: /\A\d{10,11}\z/ }
   end
  
   with_options numericality: { other_than: 1 } do
