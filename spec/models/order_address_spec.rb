@@ -18,7 +18,6 @@ RSpec.describe OrderAddress, type: :model do
       end
       it "建物名が空の場合でも保存できること" do
         @order_address.builing_name = ''
-        @order_address.valid?
         expect(@order_address).to be_valid
       end
     end
