@@ -60,7 +60,7 @@ RSpec.describe OrderAddress, type: :model do
         expect(@order_address.errors.full_messages).to include("Phone number is not a number")
       end
       it 'phone_number が11桁以内の数値のみでなければ保存できないこと' do
-        @order_address.phone_number = '012345678'
+        @order_address.phone_number = '012345678912'
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Phone number is not a number")
       end

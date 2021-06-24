@@ -9,7 +9,7 @@ def index
 end
 
 def new
-  @order_address = OrderAddress.new
+  # @order_address = OrderAddress.new
 end
 
 def create
